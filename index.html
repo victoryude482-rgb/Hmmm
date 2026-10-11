@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b0b0f"><meta name="description" content="Cinebox — discover movies, save your watchlist, and explore trailers.">
+  <title>Cinebox — Movies for your next night in</title>
+  <link rel="preconnect" href="https://image.tmdb.org"><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="Cinebox home"><span class="brand-mark">▶</span><span>CINE<span>BOX</span></span></a>
+      <div class="nav-label">MENU</div>
+      <button class="nav-item active" data-view="home"><span>⌂</span> Home</button>
+      <button class="nav-item" data-view="trending"><span>↗</span> Trending</button>
+      <button class="nav-item" data-view="movies"><span>▤</span> Movies</button>
+      <button class="nav-item" data-view="watchlist"><span>♡</span> My watchlist <span class="count" id="watchlist-count">0</span></button>
+      <div class="sidebar-bottom"><div class="mini-poster">✦</div><strong>Your next favorite</strong><p>Find something great to watch tonight.</p><button class="small-link" data-view="trending">Explore trending ↗</button><div class="side-footer">CINEBOX <span>•</span> DISCOVER MORE</div></div>
+    </aside>
+    <main class="main">
+      <header class="topbar"><button class="mobile-brand brand" data-view="home"><span class="brand-mark">▶</span><span>CINE<span>BOX</span></span></button><div class="search-wrap"><span>⌕</span><input id="search" type="search" placeholder="Search movies, genres, years..." aria-label="Search movies"><kbd>/</kbd></div><button class="profile" aria-label="Profile">CB</button></header>
+      <section id="hero" class="hero"><div class="hero-shade"></div><div class="hero-content"><span class="eyebrow"><i></i> EDITOR'S PICK</span><p class="hero-kicker">YOUR NEXT MOVIE NIGHT STARTS HERE</p><h1>Stories that<br><em>stay with you.</em></h1><p class="hero-copy">Discover big adventures, hidden gems, and the movies everyone is talking about.</p><div class="hero-actions"><button class="primary-btn" id="hero-trailer">▶ &nbsp; Watch trailer</button><button class="outline-btn" id="hero-save">♡ &nbsp; Add to watchlist</button></div><div class="hero-meta"><span>✦ Curated for you</span><span>•</span><span>Updated discovery picks</span></div></div><div class="hero-caption"><span>FEATURED FILM</span><strong id="hero-title">Dune: Part Two</strong></div></section>
+      <section class="content-section" id="continue-section"><div class="section-head"><div><p class="section-eyebrow">PICK UP THE VIBE</p><h2>Popular right now <span>↗</span></h2></div><button class="text-btn" data-view="trending">Explore all ↗</button></div><div class="movie-row" id="popular-grid"></div></section>
+      <section class="content-section"><div class="section-head"><div><p class="section-eyebrow">FIND YOUR MOOD</p><h2>Browse by genre</h2></div></div><div class="genre-row" id="genres"><button class="genre-chip selected" data-genre="All">✦ All movies</button><button class="genre-chip" data-genre="Action">⚡ Action</button><button class="genre-chip" data-genre="Adventure">✧ Adventure</button><button class="genre-chip" data-genre="Comedy">☻ Comedy</button><button class="genre-chip" data-genre="Drama">▤ Drama</button><button class="genre-chip" data-genre="Sci-Fi">✺ Sci-Fi</button><button class="genre-chip" data-genre="Thriller">◈ Thriller</button><button class="genre-chip" data-genre="Animation">✿ Animation</button></div></section>
+      <section class="content-section catalog-section" id="catalog-section"><div class="section-head"><div><p class="section-eyebrow" id="catalog-eyebrow">HANDPICKED FOR YOU</p><h2 id="catalog-title">Made for your watchlist</h2></div><span class="results-count" id="results-count"></span></div><div class="movie-grid" id="catalog-grid"></div><div class="empty-state hidden" id="empty-state"><div>⌕</div><h3>No movies found</h3><p>Try another title or genre.</p><button class="outline-btn" id="reset-search">Clear filters</button></div></section>
+      <footer><a class="brand footer-brand" href="#"><span class="brand-mark">▶</span><span>CINE<span>BOX</span></span></a><p>Discover stories. Find your next favorite.</p><p class="disclaimer">Cinebox is a movie discovery demo. Posters and metadata are illustrative. Watch trailers through YouTube; this app does not host or distribute films.</p></footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <div class="modal hidden" id="movie-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="modal-close" id="modal-close" aria-label="Close">×</button><div class="modal-poster" id="modal-poster"></div><div class="modal-info"><p class="section-eyebrow">MOVIE DETAILS</p><h2 id="modal-title"></h2><div class="modal-meta" id="modal-meta"></div><p id="modal-description"></p><div class="hero-actions"><button class="primary-btn" id="modal-trailer">▶ Watch trailer</button><button class="outline-btn" id="modal-save">♡ Add to watchlist</button></div><p class="modal-note">Trailer opens on YouTube. Full-film availability depends on the official rights holder in your region.</p></div></div>
+  <script src="app.js"></script>
+</body></html>
